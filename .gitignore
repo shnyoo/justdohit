@@ -1,1 +1,2 @@
-myvenv/
+myvenv/pyvenv.cfg
+.DS_Store/
