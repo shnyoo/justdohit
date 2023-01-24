@@ -1,2 +1,4 @@
+myvenv/pyvenv.cfg
+.DS_Store/
 myvenv/
 testproject/accounts/__pycache__/
