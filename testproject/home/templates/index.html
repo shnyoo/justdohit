@@ -1,0 +1,10 @@
+{% if user.is_authenticated %}
+안녕하세요, {{user.username}}님!
+<br />
+<a href = "{% url 'logout' %}">로그아웃</a>
+{% else %}
+<a href = "{% url 'login' %}">로그인</a>
+{% endif %}
+
+
+<h1>My Simple Blog!</h1>
