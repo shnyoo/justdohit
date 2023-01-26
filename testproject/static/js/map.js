@@ -7,6 +7,9 @@
 // parameter when you first load the API. For example:
 // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
 
+
+// ====================================== MAP ===========================================
+
 let map;
 let curPosMarker;
 
@@ -121,7 +124,7 @@ function LocatorPlus(configuration) {
 
     locationButton.textContent = "Pan to Current Location";
     locationButton.classList.add("custom-map-control-button");
-    locator.map.controls[google.maps.ControlPosition.TOP_CENTER].push(locationButton);
+    locator.map.controls[google.maps.ControlPosition.BOTTOM_CENTER].push(locationButton);
     locationButton.addEventListener("click", () => {curPosMarker.setMap(null); updateStart()});
   
     // Store selection.
@@ -306,6 +309,12 @@ function LocatorPlus(configuration) {
           placeResult.formatted_address, placeResult.geometry.location);
     });
   }
+
+window.initMap = initMap;
+
+
+
   
 
-  window.initMap = initMap;
+  
+
