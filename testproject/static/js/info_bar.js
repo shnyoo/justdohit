@@ -2,8 +2,8 @@
 const navMenu = document.getElementById('nav-menu'),
     navToggle = document.getElementById('nav-toggle'),
     navClose = document.getElementById('nav-close'),
-    searchBar = document.querySelector('.search'),
-    searchHistory = document.querySelector('.searchHistory');
+    searchBar = document.querySelector('.search');
+    
 
 // ========= MENU SHOW ============
 if(navToggle){
@@ -12,13 +12,14 @@ if(navToggle){
     })
 }
 
-
 // ========= MENU Hidden ==========
 if(navClose){
     navClose.addEventListener('click', () => {
         navMenu.classList.remove('show-menu');
     })
 }
+
+
 
 
 // Removing MENU Mobile when clicking nav__link

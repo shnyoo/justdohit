@@ -19,6 +19,14 @@ def login(request):
     else:
         return render(request, 'login.html')
 
+def schedule(request):
+    return render(request, 'schedule.html')
+
+def status(request):
+    return render(request, 'status.html')
+
+def userdetail(request):
+    return render(request, 'userdetail.html')
 
 def logout(request):
     auth.logout(request)
