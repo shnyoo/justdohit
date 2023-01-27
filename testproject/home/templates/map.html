@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/handlebars/4.7.7/handlebars.min.js"></script>
+    
+    <!-- ================= UNICONS =================== -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link href="{% static 'css/map.css' %}" rel="stylesheet">
     <script src="{% static 'js/map.js' %}"></script>
@@ -16,11 +19,13 @@
       <div id="locations-panel">
         <div id="locations-panel-list">
           <header>
-            <h1 class="search-title">
-              <img src="https://fonts.gstatic.com/s/i/googlematerialicons/place/v15/24px.svg"/>
-              Find a location near you
-            </h1>
-            <div class="search-input">
+            <div id="h1_container">
+              <h1 class="search-title">
+                <img src="https://fonts.gstatic.com/s/i/googlematerialicons/place/v15/24px.svg"/>
+                Find a location near you
+              </h1>
+            </div>
+            <div class="search-input1">
                 <input id="start-input" placeholder="Enter your address or zip code">
                 <div id="search-overlay-search" class="search-input-overlay search">
                   <button class="small-icon" id="start-search-button">
@@ -28,7 +33,7 @@
                   </button>
                 </div>
             </div>
-            <div class="search-input">
+            <div class="search-input2">
               <input id="dest-input" placeholder="Enter destination">
               <div id="search-overlay-search" class="search-input-overlay search">
                 <button class="small-icon" id="dest-search-button">
@@ -43,6 +48,35 @@
                 </button>
             </div>
           </header>
+
+          <!-- ================= Info Bar ====================-->
+          <div class="header" id="header">
+            <nav class="nav container">
+                <a href="index.html" class="nav__logo">Home</a>
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list grid">
+                        <li class="nav_item">
+                            <a href="#home" class="nav__link">
+                                <i class="uil uil-car-sideview nav__icon"></i> FindCar
+                            </a>
+                        </li>
+                        <li class="nav_item">
+                            <a href="#contact" class="nav__link">
+                                <i class="uil uil-user nav__icon"></i> MyAccount
+                            </a>
+                        </li>
+                    </ul>
+                    <i class="uil uil-times nav__close" id="nav-close"></i>
+                </div>
+
+                <div class="nav__btns">
+                    <div class="nav__toggle" id="nav-toggle">
+                        <i class="uil uil-apps"></i>
+                    </div>
+                </div>
+            </nav>
+          </div>
           
           <div class="section-name" id="location-results-section-name">
             Available Cars
@@ -59,5 +93,6 @@
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAs2Up6ElWDzv9GdisewIH2jMfvJXWp4bs&callback=initMap&libraries=places,geometry&solution_channel=GMP_QB_locatorplus_v6_cABCDE" async defe"
       defer
     ></script>
+    <script src="{% static 'js/info_bar.js' %}"></script>
   </body>
 </html>
