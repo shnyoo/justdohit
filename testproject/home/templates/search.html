@@ -51,14 +51,16 @@
             <h3>{{car.name}}</h3>
             <p>{{car.passNum}}인승</p>
             <p>침대: {{car.bedNum}}개</p>
-            <a href="{% url 'detail' car.id %}">정보</a>
+            <div class="more-info">
+                <a href="{% url 'detail' car.id %}">More Info</a>
+            </div>
         </div>
         {% endfor %}
     </div>
     <!-- ================= Info Bar ====================-->
     <div class="header" id="header">
     <nav class="nav container">
-        <a href="index.html" class="nav__logo">Home</a>
+        <a href="#" class="nav__logo">Home</a>
 
         <div class="nav__menu" id="nav-menu">
             <ul class="nav__list grid">

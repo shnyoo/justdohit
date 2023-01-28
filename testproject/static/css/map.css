@@ -153,6 +153,7 @@ a{
 
 .button-61:hover {
   box-shadow:  0 -1px 5px var(--first-color);
+  transform: scale(1.05);
 }
 
 .button-61:disabled {

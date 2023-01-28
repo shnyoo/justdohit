@@ -2,7 +2,8 @@
 const navMenu = document.getElementById('nav-menu'),
     navToggle = document.getElementById('nav-toggle'),
     navClose = document.getElementById('nav-close'),
-    searchBar = document.querySelector('.search');
+    searchBar = document.querySelector('.search'),
+    findCar = document.getElementById('find-car');
     
 
 // ========= MENU SHOW ============
@@ -17,6 +18,12 @@ if(navClose){
     navClose.addEventListener('click', () => {
         navMenu.classList.remove('show-menu');
     })
+}
+
+
+// ======== Go Back to Home =======
+if(findCar){
+
 }
 
 

@@ -92,22 +92,170 @@ a{
 }
 
 /* ================== Car ========================== */
-.car {
+.card{
+    border-radius: 1rem;
+    position: relative;
+    box-shadow: 0 1px 5px var(--first-color-lighter);
+    height: 90vh;
+    margin: 3% 5% 5% 5%;
+    transition: 0.3s;
+}
+
+.card:hover{
+    box-shadow: 0 1px 5px var(--first-color);
+}
+
+.car{
+    width: 100%;
+    box-shadow: 0 -1px 4px var(--text-color-light);
+    border-radius: 1rem 1rem;
+    position: absolute;
     padding: 20px;
-    box-shadow: 0 1px 5px rgba(0,0,0,0.15);
-    height: 100%;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 10px; 
+    bottom: 0;
 }
 
-.carImg{
-    position: relative;
+h2{
+    font-weight: var(--font-semi-bold);
+    font-size: 40px;
 }
 
-.carInfo{
-    border: 1px solid black; 
-    border-radius: 1rem 1rem 0 0;
-    position: relative;
-    bottom: 0; 
+.detailInfo > *{
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.reserve_button{
+    display: flex;
+    justify-content: right;
+    
+}
+
+.reserve_button > button {
+    margin-top: 2%;
+    border: none;
+    width: 30%;
+    box-shadow: 0 1px 5px var(--first-color-lighter);
+    background-color: var(--first-color-lighter);
+    padding: 10px 5px;
+    color: #FFF;
+    font-size: var(--small-font-size);
+    border-radius: 0.5rem;
+    transition: 0.3s;
+}
+
+.reserve_button > button:hover {
+    transform: scale(1.08);
+    box-shadow: 0 1px 5px var(--first-color);
+    background-color: var(--first-color);
+}
+
+
+
+
+
+
+/* ============ INFO BAR ============== */
+/* ==================== LAYOUT ======================== */
+.container{
+/* max-width overrides width, but min-width overrides max-width */
+/* using max-width will adjust (not larger than max-width value set) the size */
+max-width: 768px;
+margin-left: var(--mb-1-5);
+margin-right: var(--mb-1-5);
+}
+
+.grid {
+display: grid;
+gap: 1.5rem;
+}
+
+.header{
+margin: auto 0;
+width: 100%;
+position: fixed;
+bottom: 0;
+left: 0;
+padding: 0 2rem 0 2rem;
+z-index: var(--z-fixed);
+background-color: var(--body-color);
+}
+
+/* ======================== NAV ======================== */
+.nav{
+max-width: 968px;
+height: var(--header-height);
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.nav__logo,
+.nav__toggle{
+color: var(--title-color);
+font-weight: var(--font-medium);
+}
+
+.nav__logo:hover{
+color: var(--first-color);
+}
+
+.nav__toggle{
+font-size: 1.1rem;
+cursor: pointer;
+}
+
+.nav__toggle:hover{
+color: var(--first-color);
+}
+
+@media screen and (max-width: 767px){
+.nav__menu{
+    position: fixed;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--body-color);
+    padding: 2rem 1.5rem 4rem;
+    box-shadow: 0 -1px 4px rgba(0,0,0,.15);
+    border-radius: 1.5rem 1.5rem;
+    transition: .3s;
+}
+}
+
+.nav__list{
+grid-template-columns: repeat(2, 1fr);
+gap: 2rem;
+}
+
+.nav__link{
+display: flex;
+flex-direction: column;
+align-items: center;
+font-size: var(--small-font-size);
+color: var(--text-color);
+font-weight: var(--font-medium);
+}
+
+.nav__link:hover{
+color: var(--first-color);
+}
+
+.nav__icon{
+font-size: 1.2rem;
+}
+
+.nav__close{
+position: absolute;
+right: 1.3rem;
+bottom: .5rem;
+font-size: 1.5rem;
+cursor: pointer;
+color: var(--first-color);
+}
+
+
+/* Show Menu */
+.show-menu{
+bottom: 0;
 }

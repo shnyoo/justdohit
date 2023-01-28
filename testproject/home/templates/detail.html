@@ -5,32 +5,63 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ================= UNICONS =================== -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <link rel="stylesheet" href="{% static 'css/detail.css' %}">
     <title>Document</title>
 </head>
 <body>
 
-    <div class="carImg">
-        SomeImage
+    <div class="card">
+        <div class="carPicture">
+
+        </div>
+        <div class="car">
+            <h2>{{car_detail.name}}</h2>
+            <div class="detailInfo">
+                <ul>
+                    <li>{{car_detail.passNum}}인승</li>
+                    <li>침대: {{car_detail.bedNum}}개</li>
+                    <li>냉장고 여부: {{car_detail.fridge}}</li>
+                    <li>전자레인지 여부: {{car_detail.mcwave}}</li>
+                    <li>티비 여부: {{car_detail.tv}}</li>
+                </ul>
+            </div>
+            <div class="reserve_button">
+                <button href="{% url 'reserve' car_detail.id %}">예약</button>
+            </div>
+        </div>
     </div>
 
-    <div class="carInfo">
-        <h2>{{car_detail.name}}</h2>
-        
-        <h4>
-            {{car_detail.passNum}}
-            <label for="car_detail.passNum">인승</label>
-        </h4>
-        <h4>
-            <label for="car_detail.bedNum">침대: </label>
-            {{car_detail.bedNum}}개
-        </h4>
-        <h4>{{car_detail.fridge}}</h4>
-        <h4>{{car_detail.mcwave}}</h4>
-        <h4>{{car_detail.tv}}</h4>
-        <button href="{% url 'reserve' car_detail.id %}">예약</button>
+    <!-- ================= Info Bar ====================-->
+    <div class="header" id="header">
+        <nav class="nav container">
+            <a href="#" class="nav__logo">Home</a>
+    
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list grid">
+                    <li class="nav_item">
+                        <a href="#" class="nav__link" id="find-car">
+                            <i class="uil uil-car-sideview nav__icon"></i> FindCar
+                        </a>
+                    </li>
+                    <li class="nav_item">
+                        <a href="#" class="nav__link">
+                            <i class="uil uil-user nav__icon"></i> MyAccount
+                        </a>
+                    </li>
+                </ul>
+                <i class="uil uil-times nav__close" id="nav-close"></i>
+            </div>
+    
+            <div class="nav__btns">
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="uil uil-apps"></i>
+                </div>
+            </div>
+        </nav>
     </div>
-
+    <script src="{% static 'js/search.js' %}"></script>
 </body>
 </html>
 
