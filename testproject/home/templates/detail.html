@@ -1,8 +1,36 @@
-{{car_detail.name}}
-{{car_detail.passNum}}
-{{car_detail.bedNum}}
-{{car_detail.fridge}}
-{{car_detail.mcwave}}
-{{car_detail.tv}}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/detail.css' %}">
+    <title>Document</title>
+</head>
+<body>
 
-<button href="{% url 'reserve' car_detail.id %}">예약</button>
+    <div class="carImg">
+        SomeImage
+    </div>
+
+    <div class="carInfo">
+        <h2>{{car_detail.name}}</h2>
+        
+        <h4>
+            {{car_detail.passNum}}
+            <label for="car_detail.passNum">인승</label>
+        </h4>
+        <h4>
+            <label for="car_detail.bedNum">침대: </label>
+            {{car_detail.bedNum}}개
+        </h4>
+        <h4>{{car_detail.fridge}}</h4>
+        <h4>{{car_detail.mcwave}}</h4>
+        <h4>{{car_detail.tv}}</h4>
+        <button href="{% url 'reserve' car_detail.id %}">예약</button>
+    </div>
+
+</body>
+</html>
+
