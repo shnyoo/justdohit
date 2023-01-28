@@ -1,0 +1,10 @@
+유저프로필 페이지
+{% for travel in travels %}
+{{travel.start_date}}에 출발하는
+<br />
+{{travel.dest}} 여행
+<br />
+사용한 차량: 
+<a href="{%url 'detail' travel.car.id %}">{{travel.car.name}}</a>
+
+{% endfor %}

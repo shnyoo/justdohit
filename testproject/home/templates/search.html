@@ -1,0 +1,109 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ================= UNICONS =================== -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="{% static 'css/search.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <div class="header-wrapper">
+        <div class="search-wrapper">
+            <div class="input-wrapper">
+                <label for="form.start">Start</label>
+                    <div class="search-input">
+                        {{form.start}}
+                    </div>
+            </div>
+            <div class="input-wrapper">
+                <label for="form.dest">Destination</label>
+                <div class="search-input">
+                    {{form.dest}}
+                </div>
+            </div>
+            <div class="input-wrapper">
+                <label for="form.start_date">Start Date to End Date</label>
+                <div class="search-input-wrapper">
+                    <div class="search-input-date">
+                        {{form.start_date}}
+                    </div>
+                    <div class="search-input-date">
+                        {{form.arriv_date}}
+                    </div>
+                </div>
+            </div>            
+            <div class="input-wrapper">
+                <label for="form.travelerNum">Traveler Number</label>
+                <div class="search-input">
+                    {{form.travelerNum}}
+                </div>
+            </div>
+        </div>  
+    </div>
+
+    <div id="cars">
+        {% for car in cars %}
+        <div class="car">
+            <h3>{{car.name}}</h3>
+            <p>{{car.passNum}}인승</p>
+            <p>침대: {{car.bedNum}}개</p>
+            <div class="more-info">
+                <a href="{% url 'detail' car.id %}">More Info</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <!-- ================= Info Bar ====================-->
+    <div class="header" id="header">
+    <nav class="nav container">
+        <a href="#" class="nav__logo">Home</a>
+
+        <div class="nav__menu" id="nav-menu">
+            <ul class="nav__list grid">
+                <li class="nav_item">
+                    <a href="#" class="nav__link" id="find-car">
+                        <i class="uil uil-car-sideview nav__icon"></i> FindCar
+                    </a>
+                </li>
+                <li class="nav_item">
+                    <a href="#" class="nav__link">
+                        <i class="uil uil-user nav__icon"></i> MyAccount
+                    </a>
+                </li>
+            </ul>
+            <i class="uil uil-times nav__close" id="nav-close"></i>
+        </div>
+
+        <div class="nav__btns">
+            <div class="nav__toggle" id="nav-toggle">
+                <i class="uil uil-apps"></i>
+            </div>
+        </div>
+    </nav>
+    </div>
+    <script src="{% static 'js/search.js' %}"></script>
+</body>
+</html>
+
+
+<!-- =======
+<form method="GET">
+    {{form.start}}
+    {{form.dest}}
+    {{form.start_date}}
+    {{form.arriv_date}}
+    {{form.dest_date}}
+    {{form.travelerNum}}
+    <input type="submit" value="찾기">
+</form>
+
+{% for car in cars %}
+<h3>{{car.name}}</h3>
+<h3>{{car.passNum}}인승</h3>
+<h3>침대: {{car.bedNum}}개</h3>
+<a href="{% url 'detail' car.id %}">정보</a>
+{% endfor %} -->
