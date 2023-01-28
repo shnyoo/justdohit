@@ -1,3 +1,6 @@
+{% extends 'info.html' %}
+{% load static %}
+{% block content %}  
 <form action="{% url 'confirm' %}" method="POST">
     {% csrf_token %}
     {{request.session.start_date}}
@@ -6,3 +9,4 @@
     <input type="time" name="arriv_time">
     <input type="submit" value="확인">
 </form>
+{% endblock %}
