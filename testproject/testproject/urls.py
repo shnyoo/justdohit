@@ -9,12 +9,12 @@ urlpatterns = [
     path('map/', views.map, name="map"),
 
     path('search/', views.search, name="search"),
-    path('detail/<int:post_id>', views.detail, name="detail"),
-    path('detail/<int:post_id>/reserve', views.reserve, name="reserve"),
+    path('detail/<int:car_id>', views.detail, name="detail"),
+    path('reserve/', views.reserve, name="reserve"),
     path('confirm/', views.confirm, name="confirm"),
 
     path('userdetail/', accounts_views.userdetail, name="userdetail"),
-    path('schedule/', accounts_views.schedule, name="schedule"),
+    path('schedule/<int:travel_id>', accounts_views.schedule, name="schedule"),
     path('status/', accounts_views.status, name="status"),
 
     path('login/', accounts_views.login, name='login'),
