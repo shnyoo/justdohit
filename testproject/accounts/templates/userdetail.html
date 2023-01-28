@@ -6,5 +6,5 @@
 <br />
 사용한 차량: 
 <a href="{%url 'detail' travel.car.id %}">{{travel.car.name}}</a>
-
+<a href="{% url 'schedule' travel.id %}">일정 보기</a>
 {% endfor %}
