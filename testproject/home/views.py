@@ -3,6 +3,11 @@ from .forms import TravelForm, RideForm
 from .models import Vehicle, Ride, Travel
 import requests
 import time
+from django.shortcuts import render, get_object_or_404
+from .forms import TravelForm, RideForm
+from .models import Vehicle, Ride, Travel
+import requests
+import time
 
 def home(request):
     return render(request, 'index.html')

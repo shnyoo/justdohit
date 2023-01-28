@@ -11,6 +11,9 @@
     
     <!-- ================= UNICONS =================== -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    
+    <!-- ================= UNICONS =================== -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link href="{% static 'css/map.css' %}" rel="stylesheet">
     <script src="{% static 'js/map.js' %}"></script>
@@ -70,6 +73,10 @@
           </div>
           <div class="results">
             <ul id="location-results-list"></ul>
+            {% for car in cars %}
+            <div>{{car.name}}</div>
+            <div>{{car.passNum}}</div>
+            {% endfor %}
           </div>
         </div>
         <div id="locations-panel-details"></div>
@@ -77,7 +84,7 @@
       <div id="gmp-map"></div>
     </div>    
     <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAs2Up6ElWDzv9GdisewIH2jMfvJXWp4bs&callback=initMap&libraries=places,geometry&solution_channel=GMP_QB_locatorplus_v6_cABCDE" async defe"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAs2Up6ElWDzv9GdisewIH2jMfvJXWp4bs&callback=initMap&libraries=places,geometry&language=en&solution_channel=GMP_QB_locatorplus_v6_cABCDE" async defe"
       defer
     ></script>
     <script src="{% static 'js/find_car_header.js' %}"></script>
