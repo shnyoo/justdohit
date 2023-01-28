@@ -5,6 +5,11 @@
 도착 시간: {{ride.arriv_time}}
 도착지: {{ride.dest}}
 <br />
-<a href="">일정 추가</a>
-<br />
 {% endfor %}
+
+<form method="POST" action="{% url 'schedule' travel_id %}">
+    {% csrf_token %}
+    {{form}}
+    <br />
+    <button type="submit">일정 추가
+</form>
