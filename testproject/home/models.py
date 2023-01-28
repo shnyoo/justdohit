@@ -40,10 +40,7 @@ class Travel(models.Model):
 
 
 class Ride(models.Model):
-    start = models.CharField(max_length=200)
     dest = models.CharField(max_length=200)
-
-    start_time = models.DateTimeField(default=timezone.now)
-    arriv_time = models.DateTimeField()
+    arriv_time = models.TimeField()
 
     schedule = models.ForeignKey(Travel, on_delete=models.CASCADE, null=True)

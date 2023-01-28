@@ -1,0 +1,10 @@
+여행일정
+<br />
+
+{% for ride in rides %}
+도착 시간: {{ride.arriv_time}}
+도착지: {{ride.dest}}
+<br />
+<a href="">일정 추가</a>
+<br />
+{% endfor %}

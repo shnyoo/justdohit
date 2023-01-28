@@ -1,5 +1,5 @@
 from django import forms
-from .models import Vehicle, Travel
+from .models import Ride, Travel
 
 class TravelForm(forms.ModelForm):
     class Meta:
@@ -18,3 +18,8 @@ class TravelForm(forms.ModelForm):
             'id': 'dest-input',
             'placeholder': "Enter destination"
         }
+
+class RideForm(forms.ModelForm):
+    class Meta:
+        model = Ride
+        fields = ['dest', 'arriv_time']
