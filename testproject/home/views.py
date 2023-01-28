@@ -3,6 +3,11 @@ from .forms import TravelForm, RideForm
 from .models import Vehicle, Ride, Travel
 import requests
 import time
+from django.shortcuts import render, get_object_or_404
+from .forms import TravelForm, RideForm
+from .models import Vehicle, Ride, Travel
+import requests
+import time
 
 def home(request):
     return render(request, 'index.html')
@@ -46,6 +51,7 @@ def confirm(request):
                 final = final_form.save(commit=False)
                 final.start_time = request.POST['start_time']
                 final.arriv_time = request.POST['arriv_time']
+                final.car = bookedVehicle
                 final.traveler = request.user
                 final.save()
                 

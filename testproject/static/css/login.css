@@ -1,0 +1,203 @@
+
+:root{
+    --header-height: 3rem;
+
+    /* Colors */
+    /* Change favorite color */
+    --hue-color: 218; /* Purple 250 - Green 142 - Blue 230 - Pink 340 */
+
+    /* HSL color mode */
+    --first-color: hsl(var(--hue-color), 100%, 40%);
+    --first-color-second: hsl(var(--hue-color), 69%, 61%);
+    --first-color-alt: hsl(var(--hue-color), 57%, 53%);
+    --first-color-lighter: hsl(var(--hue-color), 92%, 85%);
+    --title-color: hsl(var(--hue-color), 8%, 15%);
+    --text-color: hsl(var(--hue-color), 8%, 45%);
+    --text-color-light: hsl(var(--hue-color), 8%, 65%);
+    --input-color: hsl(var(--hue-color), 70%, 96%);
+    --body-color: hsl(var(--hue-color), 60%, 99%);
+    --container-color: #fff;
+
+
+
+/* CSS variables: */
+   /* Font and typography */
+   --body-font: 'Poppins', sans-serif;
+
+   /* .5rem = 8px, 1rem - 16px, 1.5rem = 24px 2rem = 32px ... */
+   --big-font-size: 2rem;
+   --h1-font-size: 1.5rem;
+   --h2-font-size: 1.25rem;
+   --h3-font-size: 1.125rem;
+   --normal-font-size: .938rem;
+   --small-font-size: .813rem;
+   --smaller-font-size: .75rem;
+
+
+   /* Font weight */
+   --font-medium: 500;
+   --font-semi-bold: 600;
+
+
+   /* Margenes Bottom */
+   /* .5rem = 8px, 1rem - 16px, 1.5rem = 24px 2rem = 32px ... */
+   --mb-0-25: .25rem;
+   --mb-0-5: .5rem;
+   --mb-0-75: .75rem;
+   --mb-1: 1rem;
+   --mb-1-5: 1.5rem;
+   --mb-2: 2rem;
+   --mb-2-5: 2.5rem;
+   --mb-3: 3rem;
+
+   /* z index */
+   --z-tooltip: 10;
+   --z-fixed: 100;
+   --z-modal: 1000;
+
+}
+
+
+body{
+
+    /* colors for error and success */
+    --color-error: #cc3333;
+    --color-success: #4bb544;
+    
+    /* border radius */
+    --border-radius: 4px;
+
+    margin: 0;
+    height: 100vh;
+    /* vertically and horizontally center container for both forms */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    background: var(--first-color);
+    background-size: cover;
+}
+
+.container{
+    width: 400px;
+    max-width: 400px;
+    margin: 1rem;
+    padding: 2rem;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+    border-radius: var(--border-radius);
+    background: white;
+}
+
+.container,
+.form__input,
+.form__button {
+    font: 300 1rem var(--body-font);
+}
+
+
+.form--hidden{
+    display: none;
+}
+
+.form > *:first-child{
+    margin-top: 0;
+}
+
+.form > *:last-child{
+    margin-bottom: 0;
+}
+
+.form__title{
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+
+.form__message{
+    text-align: center;
+    margin-bottom: 1rem;
+
+}
+
+.form__message--success{
+    color: var(--color-success);
+}
+
+.form__message--error{
+    color: var(--color-error);
+}
+
+.form__input-group{
+    margin-bottom: 1rem;
+
+}
+
+
+.form__input {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    box-sizing: border-box;
+    border-radius: var(--border-radius);
+    border: 1px sold #dddddd;
+    outline: none;
+    background: #eeeeee;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.form__input:focus{
+    border-color: var(--first-color);
+    background: #ffffff;
+}
+
+.form__input--error{
+    color: var(--color-error);
+    border-color: var(--color-error);
+}
+
+.form__input-error-message{
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--color-error);
+}
+
+.form__button{
+    width: 100%;
+    padding: 1rem 2rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    outline: none;
+    cursor: pointer;
+    background: var(--first-color);
+
+}
+
+.form__button:hover{
+    background: var(--first-color-second);
+}
+
+/* reduces size when button is clicked */
+.form__button:active{
+    transform: scale(0.98);
+}
+
+
+.form__text{
+    text-align: center;
+}
+
+
+.form__link{
+    color: var(--first-color-second);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+.form__link:hover{
+    text-decoration: underline;
+}

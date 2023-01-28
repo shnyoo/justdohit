@@ -5,7 +5,7 @@ from accounts import views as accounts_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home, name="home"),
+    path('', accounts_views.login, name="login"),
     path('map/', views.map, name="map"),
 
     path('search/', views.search, name="search"),
