@@ -22,16 +22,23 @@ def login(request):
         return render(request, 'login.html')
 
 def schedule(request, travel_id):
-    travel = get_object_or_404(home_model.Travel, pk=travel_id)
+    if request.method == 'POST':
+        ride_form = forms.RideForm(request.POST)
+        if ride_form.is_valid():
+            ride = ride_form.save(commit=False)
+            ride.schedule = home_model.Travel.objects.get(pk=travel_id)
+            ride.save()
     rides = home_model.Ride.objects.filter(schedule__pk=travel_id).order_by('arriv_time')
+    form = forms.RideForm()
 
-    return render(request, 'schedule.html', {'rides': rides})
+    return render(request, 'schedule.html', {'travel_id': travel_id, 'rides': rides, 'form':form})
 
 def status(request):
     return render(request, 'status.html')
 
 def userdetail(request):
-    return render(request, 'userdetail.html')
+    travels = home_model.Travel.objects.filter(traveler__pk=request.user.id)
+    return render(request, 'userdetail.html', {'travels': travels})
 
 def logout(request):
     auth.logout(request)

@@ -5,4 +5,9 @@
 {{car_detail.mcwave}}
 {{car_detail.tv}}
 
+
+{% if not car_detail.booked %}
 <a href="{% url 'reserve' %}">예약</a>
+{% else %}
+현재 예약이 불가능한 차량입니다.
+{% endif %}

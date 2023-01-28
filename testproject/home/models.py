@@ -35,6 +35,8 @@ class Travel(models.Model):
     start_time = models.TimeField(default=timezone.now)
     arriv_time = models.TimeField()
 
+    car = models.ForeignKey(Vehicle, null=True, on_delete=models.SET_NULL)
+
     travelerNum = models.IntegerField()
     traveler = models.ForeignKey(User, on_delete=models.CASCADE)
 

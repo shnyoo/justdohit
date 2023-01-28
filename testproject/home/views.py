@@ -46,6 +46,7 @@ def confirm(request):
                 final = final_form.save(commit=False)
                 final.start_time = request.POST['start_time']
                 final.arriv_time = request.POST['arriv_time']
+                final.car = bookedVehicle
                 final.traveler = request.user
                 final.save()
                 
