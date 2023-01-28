@@ -1,4 +1,7 @@
+{% extends 'info.html' %}
 {% load static %}
+
+{% block content %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,53 +31,17 @@
                 </ul>
             </div>
             <div class="reserve_button">
-                <button href="{% url 'reserve' car_detail.id %}">예약</button>
+                {% if not car_detail.booked %}
+                <a href="{% url 'reserve' %}">예약</a>
+                {% else %}
+                현재 예약이 불가능한 차량입니다.
+                {% endif %}
             </div>
         </div>
     </div>
 
-    <!-- ================= Info Bar ====================-->
-    <div class="header" id="header">
-        <nav class="nav container">
-            <a href="#" class="nav__logo">Home</a>
-    
-            <div class="nav__menu" id="nav-menu">
-                <ul class="nav__list grid">
-                    <li class="nav_item">
-                        <a href="#" class="nav__link" id="find-car">
-                            <i class="uil uil-car-sideview nav__icon"></i> FindCar
-                        </a>
-                    </li>
-                    <li class="nav_item">
-                        <a href="#" class="nav__link">
-                            <i class="uil uil-user nav__icon"></i> MyAccount
-                        </a>
-                    </li>
-                </ul>
-                <i class="uil uil-times nav__close" id="nav-close"></i>
-            </div>
-    
-            <div class="nav__btns">
-                <div class="nav__toggle" id="nav-toggle">
-                    <i class="uil uil-apps"></i>
-                </div>
-            </div>
-        </nav>
-    </div>
     <script src="{% static 'js/search.js' %}"></script>
 </body>
 </html>
 
-{{car_detail.name}}
-{{car_detail.passNum}}
-{{car_detail.bedNum}}
-{{car_detail.fridge}}
-{{car_detail.mcwave}}
-{{car_detail.tv}}
-
-
-{% if not car_detail.booked %}
-<a href="{% url 'reserve' %}">예약</a>
-{% else %}
-현재 예약이 불가능한 차량입니다.
-{% endif %}
+{% endblock %}
