@@ -1,4 +1,12 @@
-{{form}}
+<form method="GET">
+    {{form.start}}
+    {{form.dest}}
+    {{form.start_date}}
+    {{form.arriv_date}}
+    {{form.dest_date}}
+    {{form.travelerNum}}
+    <input type="submit" value="찾기">
+</form>
 
 {% for car in cars %}
 <h3>{{car.name}}</h3>
