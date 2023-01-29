@@ -7,7 +7,9 @@ import datetime
 
 def login(request):
     #POST 요청이 들어오면 로그인 처리
-    if request.method == 'POST':
+    if request.user.is_authenticated:
+        return render(request, 'map.html')
+    elif request.method == 'POST':
         user_name = request.POST['username']
         user_pw = request.POST['password']
         user = auth.authenticate(request, username=user_name, password=user_pw)
