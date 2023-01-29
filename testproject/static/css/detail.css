@@ -8,7 +8,7 @@
 
 /* ========= COLORS =========== */
 /* Change favorite color */
---hue-color: 218;
+--hue-color: 215;
 
 /* HSL color mode */
 --first-color: hsl(var(--hue-color), 69%, 61%);
@@ -70,7 +70,7 @@ body{
     margin: 0;
     font-family: var(--body-font);
     font-size: var(--body-font-size);
-    background-color: var(--body-color);
+    background-color: var(--first-color-lighter);
     color: var(--text-color);
     overflow-y: hidden; /* Hide vertical scrollbar */
     overflow-x: hidden; /* Hide horizontal scrollbar */
@@ -96,13 +96,14 @@ a{
     border-radius: 1rem;
     position: relative;
     box-shadow: 0 1px 5px var(--first-color-lighter);
-    height: 90vh;
+    height: 87vh;
     margin: 3% 5% 5% 5%;
     transition: 0.3s;
+    background-color: var(--body-color);
 }
 
 .card:hover{
-    box-shadow: 0 1px 5px var(--first-color);
+    box-shadow: 0 1px 20px var(--first-color);
 }
 
 .car{
