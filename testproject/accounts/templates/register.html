@@ -11,25 +11,29 @@
 </head>
 <body>
     <div class="container">
-        <!-- login form -->
-        <form class="form" id="login" method="POST">
+        <form class="form" id="createAccount" method="POST">
             {% csrf_token %}
-            <h1 class="form__title">RedEye</h1>
+            <h1 class="form__title">Create Account</h1>
             <div class="form__message form__message--error"></div>
             <div class="form__input-group">
-                <input type="text" class="form__input" autofocus placeholder="Username" name="username">
+                <input type="text" id="signupUsername" class="form__input" autofocus placeholder="Username" name="username">
+                <div class="form__input-error-message"></div>
+            </div>
+            <div class="form__input-group">
+                <input type="text" class="form__input" autofocus placeholder="Email Address">
                 <div class="form__input-error-message"></div>
             </div>
             <div class="form__input-group">
                 <input type="password" class="form__input" autofocus placeholder="Password" name="password">
                 <div class="form__input-error-message"></div>
             </div>
+            <div class="form__input-group">
+                <input type="password" class="form__input" autofocus placeholder="Confirm Password" name="repeat">
+                <div class="form__input-error-message"></div>
+            </div>
             <button class="form__button" type="submit">Continue</button>
             <p class="form__text">
-                <a href="#" class="form__link">Forgot your password?</a>
-            </p>
-            <p class="form__text">
-                <a class="form__link" href="{% url 'register' %}" id="linkCreateAccount">Create account</a>
+                <a class="form__link" href="./" id="linkLogin">Already have an account? Sign in</a>
             </p>
         </form>
     </div>
