@@ -15,16 +15,20 @@
 </head>
 <body>
     <div class="user_info">
-        <p>
-            {{user.username}}
-        </p>
+        <h1> Welcome, {{user.username}}</h1>
     </div>
+    <br />    
+    <br />
+    <br />
+    <h2>&nbsp;&nbsp;Your Travel History</h2>
+    <hr style="margin-top:15px;">
+    <br />
     <div class="cards">
         {% for travel in travels %}
         <div class="containers">
             <div class="info">
                 <p class="start_date">
-                    {{travel.start_date}}
+                    {{travel.start_date.month}}/{{travel.start_date.day}} trip
                 </p>
             </div>
             <div class="info">
@@ -34,20 +38,27 @@
                 <p>
                     <a href="" class="location">
                         <!-- somehow make it show destination when tap on location -->
-                        {{travel.dest}}
+                        &nbsp;{{travel.dest}}
                     </a>
                 </p>  
             </div>
+            <div>
+                <a href="{% url 'detail' travel.car.id %}" class="car-info">
+                    > car info
+                </a>
+            </div>
             
-            <a href="{%url 'detail' travel.car.id %}">
-                <div class="car" > 
-                    {{travel.car.name}}
+            <div style="text-align: right; padding-right: 6.5%; margin-bottom: 2px;">
+                <h3>schedule</h3>
+                <div>
+                    <a href="{%url 'schedule' travel.id %}" class="arrow" style="margin-top: 8%; margin-right: 4%;"></a>
                 </div>
-            </a>
+            </div>
 
-            <a href="{% url 'schedule' travel.id %}" style="color:black">
-                view schedule
-            </a>
+
+
+            
+
         </div>
         {% endfor %}
     </div>

@@ -94,6 +94,9 @@
     color: var(--title-color);
 }
 
+a{
+  text-decoration: none;
+}
 
   /* CSS */
 .car {
@@ -104,6 +107,14 @@
     padding: 5px;
     width: 20%;
     background: var(--first-color-lighter);
+}
+
+.car-info{
+  color:black;
+}
+
+.car-info:hover{
+  color:blue;
 }
 
 .car:hover{
@@ -124,7 +135,6 @@ p{
     height: 93vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
 }
 
@@ -137,9 +147,10 @@ p{
     padding: 10px;
     width: 80%;
     font: 500 1rem var(--body-font); 
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);  
+    box-shadow: 0 0 10px lightgrey;  
     border-radius: var(--border-radius);
  
+    transition: box-shadow .4s;
 }
 
 .start_date{
@@ -148,7 +159,7 @@ p{
 
 .info{
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
     font: 500 1rem var(--body-font);    
     border-radius: var(--border-radius);
@@ -165,7 +176,7 @@ p{
   
 .containers:hover{
   cursor: pointer;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);  
+  box-shadow: 0 0 11px rgb(209, 223, 227);  
 
 }
 
@@ -272,4 +283,34 @@ p{
 .user_info{
   padding: 10px 10px;
   text-align: center;
+}
+
+.arrow {
+	position: absolute;
+	top: 50%;
+	width: 3vmin;
+	height: 3vmin;
+	background: transparent;
+	border-top: 1vmin solid skyblue;
+	border-right: 1vmin solid skyblue;
+	box-shadow: 0 0 0 lightgray;
+	transition: all 200ms ease;
+
+  right: 0;
+  transform: translate3d(0,-50%,0) rotate(45deg);
+}
+	
+.arrow:hover {
+  border-color: rgb(35, 35, 255);
+  box-shadow: 0.5vmin -0.5vmin 0 white;
+}
+	
+.arrow:before { 
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-40%,-60%) rotate(45deg);
+  width: 200%;
+  height: 200%;
 }

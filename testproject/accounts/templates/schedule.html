@@ -17,19 +17,17 @@
 <body>
 
     {% for ride in rides %}
-    <div class="schedule">
+    <div class="schedule" style="display:flex;">
         <div class="info_schedule">
             <div class="organize">
-                <p>
-                    <b>Arrival time:</b> <br>
+                <h3 style="text-align:left; padding-left:12%; padding-top:8%; width:50px;">
                     {{ride.arriv_time}}
-                </p>
+                </h3>
             </div>
         </div>
         <div class="ride_destination">
-            <div class="organize">
+            <div class="organize" style="padding-top: 10px; padding-left:10px;">
                 <p>
-                    <b>Destination:</b> <br>
                     {{ride.dest}}            
                 </p>
             </div>
@@ -40,16 +38,16 @@
     <div class="form">
         <form method="POST" action="{% url 'schedule' travel_id %}">
             {% csrf_token %}
-            {{form}}
-            <br />
-    </div>
-    <div class="button">
-        <button type="submit">
-            Add event
-        </button>
-    </div>
-           
+            <div>
+                Destination: <input type="text" name="dest">
+                Arrival time: <input type="time" name="arriv_time">
+                
+            </div>
+            <input class="button-26" type="submit" style="margin-left: 60%; margin-top: 2%;" value="Add event">
         </form>
+    </div>
+        
+
     
     
 
