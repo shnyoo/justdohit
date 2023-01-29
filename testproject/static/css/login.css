@@ -75,7 +75,7 @@ body{
     align-items: center;
     justify-content: center;
     font-size: 18px;
-    background: var(--body-color);
+    background: var(--first-color);
     background-size: cover;
 }
 
