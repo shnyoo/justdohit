@@ -1,5 +1,6 @@
+{% extends 'info.html' %}
 {% load static %}
-
+{% block content %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -50,55 +51,30 @@
                     <button type="submit" class="confirm_button">Confirm</button>
                 </div>
             </form>
-        </div>  
+        </div>
     </div>
 
     <div id="cars">
         {% for car in cars %}
         <div class="car">
-            <h3>{{car.name}}</h3>
-            <p>{{car.passNum}}인승</p>
-            <p>침대: {{car.bedNum}}개</p>
             <div class="info-wrapper">
+                <h3>{{car.name}}</h3>
+                <p>{{car.passNum}}인승</p>
+                <p>침대: {{car.bedNum}}개</p>
                 <div class="more-info">
                     <a href="{% url 'detail' car.id %}">Info</a>
                 </div>
             </div>
+            <div class="img">
+                <img src="{% static 'img/pbv1.jpg' %}" alt="pbv car" class="pbvImg">
+            </div>
         </div>
         {% endfor %}
     </div>
-    <!-- ================= Info Bar ====================-->
-    <div class="header" id="header">
-        <nav class="nav container">
-            <a href="#" class="nav__logo">Home</a>
-
-            <div class="nav__menu" id="nav-menu">
-                <ul class="nav__list grid">
-                    <li class="nav_item">
-                        <a href="#" class="nav__link" id="find-car">
-                            <i class="uil uil-car-sideview nav__icon"></i> FindCar
-                        </a>
-                    </li>
-                    <li class="nav_item">
-                        <a href="#" class="nav__link">
-                            <i class="uil uil-user nav__icon"></i> MyAccount
-                        </a>
-                    </li>
-                </ul>
-                <i class="uil uil-times nav__close" id="nav-close"></i>
-            </div>
-
-            <div class="nav__btns">
-                <div class="nav__toggle" id="nav-toggle">
-                    <i class="uil uil-apps"></i>
-                </div>
-            </div>
-        </nav>
-    </div>
-    <script src="{% static 'js/search.js' %}"></script>
+    <script type="module" src="{% static 'js/info_bar.js' %}"></script>
 </body>
 </html>
-
+{% endblock %}
 
 <!-- =======
 <form method="GET">
