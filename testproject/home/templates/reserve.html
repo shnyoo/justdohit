@@ -1,12 +1,44 @@
 {% extends 'info.html' %}
 {% load static %}
-{% block content %}  
-<form action="{% url 'confirm' %}" method="POST">
-    {% csrf_token %}
-    {{request.session.start_date}}
-    <input type="time" name="start_time">
-    {{request.session.arriv_date}}
-    <input type="time" name="arriv_time">
-    <input type="submit" value="확인">
-</form>
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ================= UNICONS =================== -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="{% static 'css/reserve.css' %}">
+    <title>Reserve</title>
+</head>
+<body>
+    <div class="reserve_date">
+        <div class="wrapper">
+            <div class="comment">
+                <h2>거의 다 왔어요!</h2> 
+                <h3>출발 시간과 도착 시간을 정해주세요!</h3>
+                <hr class="line">
+            </div>
+            
+            <form action="{% url 'confirm' %}" method="POST">
+                <div class="reserve_time">
+                    {% csrf_token %}
+                    {{request.session.start_date}}
+                    <input type="time" name="start_time" class="date_input">
+                </div>
+                <div class="reserve_time">
+                    {{request.session.arriv_date}}
+                    <input type="time" name="arriv_time" class="date_input">
+                </div>
+                <div class="reserve_button">
+                    <input type="submit" value="확인">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script type="module" src="{% static 'js/info_bar.js' %}"></script>
+</body>
+</html>
 {% endblock %}
