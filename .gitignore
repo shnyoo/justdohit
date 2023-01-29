@@ -7,3 +7,4 @@ testproject/accounts/__pycache__/
 *.pyc
 *.pyc
 *.pyc
+testproject/db.sqlite3
