@@ -3,6 +3,7 @@ from django.contrib import auth #데이터베이스에서 유저 확인
 from django.contrib.auth.models import User
 from home import models as home_model
 from home import forms
+import datetime
 
 def login(request):
     #POST 요청이 들어오면 로그인 처리
@@ -34,7 +35,12 @@ def schedule(request, travel_id):
     return render(request, 'schedule.html', {'travel_id': travel_id, 'rides': rides, 'form':form})
 
 def status(request):
-    return render(request, 'status.html')
+    curTravel = home_model.Travel.objects.filter(traveler__pk=request.user.id, start_date__lte=datetime.datetime.now(),
+                                               arriv_date__gte=datetime.datetime.now()).first()
+    if (curTravel == None):
+        return render(request, 'no_car.html')
+    else:
+        return render(request, 'status.html', {'car':curTravel.car, 'travel_id': curTravel.id})
 
 def userdetail(request):
     travels = home_model.Travel.objects.filter(traveler__pk=request.user.id)

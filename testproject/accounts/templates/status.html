@@ -1,0 +1,48 @@
+{% extends 'info.html' %}
+{% load static %}
+{% block content %}  
+<html>
+  <head>
+    <title>Geolocation</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/handlebars/4.7.7/handlebars.min.js"></script>
+    
+    <!-- ================= UNICONS =================== -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    
+    <!-- ================= UNICONS =================== -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="{% static 'css/map.css' %}" rel="stylesheet">
+    <script src="{% static 'js/status.js' %}"></script>
+  </head>
+  <body>
+    <input type="hidden" id="lat" value="{{car.lat}}">
+    <input type="hidden" id="lon" value="{{car.lon}}">
+    
+    <div id="map-container">  
+      <div id="locations-panel">
+        <div id="locations-panel-list">
+          <div id="header-wrapper">
+            <header class="show-header">
+                <a href="{% url 'schedule' travel_id %}" class="button-61">호출</a>
+            </header>
+          </div>
+          <div class="results">
+            <ul id="location-results-list"></ul>
+          </div>
+        </div>
+        <div id="locations-panel-details"></div>
+      </div>
+      <div id="gmp-map"></div>
+    </div>    
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAs2Up6ElWDzv9GdisewIH2jMfvJXWp4bs&callback=initMap&libraries=places,geometry&language=en&solution_channel=GMP_QB_locatorplus_v6_cABCDE" async defe"
+      defer
+    ></script>
+    <script type="module" src="{% static 'js/find_car_header.js' %}"></script>
+  </body>
+</html>
+{% endblock %}

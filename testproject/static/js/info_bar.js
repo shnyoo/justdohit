@@ -20,8 +20,6 @@ if(navClose){
 }
 
 
-
-
 // Removing MENU Mobile when clicking nav__link
 const navLink = document.querySelectorAll('.nav__link');
 
