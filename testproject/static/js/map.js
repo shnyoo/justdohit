@@ -122,7 +122,7 @@ function LocatorPlus(configuration) {
     }
 
 
-    locationButton.textContent = "Pan to Current Location";
+    locationButton.textContent = "Your Location";
     locationButton.classList.add("custom-map-control-button");
     locator.map.controls[google.maps.ControlPosition.BOTTOM_CENTER].push(locationButton);
     locationButton.addEventListener("click", () => {curPosMarker.setMap(null); updateStart()});
