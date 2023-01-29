@@ -3,7 +3,6 @@
 {% load static %}
 {% block content %}  
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,11 +10,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-
     <link rel="stylesheet" href="{% static 'css/userdetail.css' %}">
     <title>My account</title>
 </head>
 <body>
+
+    <div class="user_info">
+        <p>
+            {{user.username}}
+        </p>
+    </div>
+
     <div class="cards">
         {% for travel in travels %}
         <div class="containers">
@@ -35,9 +40,16 @@
                     </a>
                 </p>  
             </div>
-            <div class="car"> 
-                    <a href="{%url 'detail' travel.car.id %}">{{travel.car.name}}</a>
-            </div> 
+            
+            <a href="{%url 'detail' travel.car.id %}">
+                <div class="car" > 
+                    {{travel.car.name}}
+                </div>
+            </a>
+
+            <a href="{% url 'schedule' travel.id %}" style="color:black">
+                view schedule
+            </a>
         </div>
         {% endfor %}
     </div>
