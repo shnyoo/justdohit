@@ -6,7 +6,7 @@
 
     /* Colors */
     /* Change favorite color */
-    --hue-color: 218; /* Purple 250 - Green 142 - Blue 230 - Pink 340 */
+    --hue-color: 215; /* Purple 250 - Green 142 - Blue 230 - Pink 340 */
 
     /* HSL color mode */
     --first-color: hsl(var(--hue-color), 100%, 40%);
@@ -76,7 +76,7 @@ body{
     align-items: center;
     justify-content: center;
     font-size: 18px;
-    background: var(--body-color);
+    background: var(--first-color);
     background-size: cover;
 }
 
