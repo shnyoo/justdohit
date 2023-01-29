@@ -19,16 +19,21 @@
     {% for ride in rides %}
     <div class="schedule">
         <div class="info_schedule">
-            <p>
-                Arrival time: <br>
-                {{ride.arriv_time}}
-            </p>
+            <div class="organize">
+                <p>
+                    <b>Arrival time:</b> <br>
+                    {{ride.arriv_time}}
+                </p>
+            </div>
         </div>
         <div class="ride_destination">
-            <p>
-                Ride Destination: <br>
-                {{ride.dest}}            
-            </p>
+            <div class="organize">
+                <p>
+                    <b>Destination:</b> <br>
+                    {{ride.dest}}            
+                </p>
+            </div>
+            
         </div>
     </div>
     {% endfor %}
