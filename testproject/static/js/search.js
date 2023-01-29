@@ -21,10 +21,10 @@ if(navClose){
 }
 
 
-// ======== Go Back to Home =======
-if(findCar){
+// // ======== Go Back to Home =======
+// if(findCar){
 
-}
+// }
 
 
 // Removing MENU Mobile when clicking nav__link

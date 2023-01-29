@@ -30,18 +30,22 @@
                     <li>티비 여부: {{car_detail.tv}}</li>
                 </ul>
             </div>
+            
+            {% if not car_detail.booked %}
             <div class="reserve_button">
-                {% if not car_detail.booked %}
                 <a href="{% url 'reserve' %}">예약</a>
-                {% else %}
-                현재 예약이 불가능한 차량입니다.
-                {% endif %}
             </div>
+            {% else %}
+            현재 예약이 불가능한 차량입니다.
+            {% endif %}
+            
         </div>
     </div>
 
+
     <script src="{% static 'js/search.js' %}"></script>
+    <script type="module" src="{% static 'js/info_bar.js' %}"></script>
 </body>
 </html>
-
 {% endblock %}
+

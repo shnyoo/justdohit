@@ -1,6 +1,43 @@
-예약이 완료되었습니다!
-{{start_date}} {{start_time}}에
-{{start}} 로
-차량이 도착할 예정이에요.
-<a href="{% url 'map' %}">홈으로 돌아가기</a>
-<a href="{% url 'schedule' travel_id %}">여행일정 등록하기</a>
+{% extends 'info.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ================= UNICONS =================== -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="{% static 'css/confirm.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="card">  
+            <h2>예약이 완료되었습니다!</h2>
+            <hr class="line">
+            <div class="comment">
+                <div class="comment_detail">
+                    <span>일시: </span>
+                    <span>{{start_date}} {{start_time}}</span>
+                </div>
+                <div class="comment_detail">
+                    <span>차량 탑승시간: </span>
+                    <span>{{start}}</span>
+                </div>
+            </div>
+            <a href="{% url 'map' %}">홈으로 돌아가기</a>
+            <a href="{% url 'schedule' travel_id %}">여행일정 등록하기</a>
+        </div>
+    </div>
+    
+    
+    
+    
+    
+    <script type="module" src="{% static 'js/info_bar.js' %}"></script>
+</body>
+</html>
+{% endblock %}
+
