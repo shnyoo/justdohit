@@ -75,7 +75,7 @@ body{
     margin: 0;
     font-family: var(--body-font);
     font-size: var(--body-font-size);
-    background-color: var(--body-color);
+    background-color: var(--first-color);
     color: var(--text-color);
     overflow-y: hidden; /* Hide vertical scrollbar */
     overflow-x: hidden; /* Hide horizontal scrollbar */
@@ -107,7 +107,6 @@ a{
     width: 100vw;
     height: 93vh;
     margin: auto 0;
-    
 }
 
 
@@ -123,6 +122,7 @@ a{
     box-shadow: 0 -1px 5px var(--first-color-lighter);
     transition: 0.3s;
     padding: 10px;
+    background-color: var(--body-color);
 }
 
 .card:hover{
@@ -132,6 +132,14 @@ a{
 
 h2{
     text-align: center;
+}
+
+hr.line{
+    border: 0;
+    height: 0;
+    width: 80%;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .comment{
@@ -147,6 +155,11 @@ h2{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     justify-content: left;
+    padding: 10px;
+}
+
+.comment_detail > span{
+    text-align: left;
 }
 
 /* ============ INFO BAR ============== */
