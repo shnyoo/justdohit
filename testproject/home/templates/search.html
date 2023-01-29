@@ -14,35 +14,42 @@
 <body>
     <div class="header-wrapper">
         <div class="search-wrapper">
-            <div class="input-wrapper">
-                <label for="form.start">Start</label>
-                    <div class="search-input">
-                        {{form.start}}
+            <form method="GET">
+                <div class="inputs">
+                    <div class="input-wrapper">
+                        <label for="form.start">Start</label>
+                            <div class="search-input">
+                                {{form.start}}
+                            </div>
                     </div>
-            </div>
-            <div class="input-wrapper">
-                <label for="form.dest">Destination</label>
-                <div class="search-input">
-                    {{form.dest}}
-                </div>
-            </div>
-            <div class="input-wrapper">
-                <label for="form.start_date">Start Date to End Date</label>
-                <div class="search-input-wrapper">
-                    <div class="search-input-date">
-                        {{form.start_date}}
+                    <div class="input-wrapper">
+                        <label for="form.dest">Destination</label>
+                        <div class="search-input">
+                            {{form.dest}}
+                        </div>
                     </div>
-                    <div class="search-input-date">
-                        {{form.arriv_date}}
+                    <div class="input-wrapper">
+                        <label for="form.start_date">Start Date to End Date</label>
+                        <div class="search-input-wrapper">
+                            <div class="search-input-date">
+                                {{form.start_date}}
+                            </div>
+                            <div class="search-input-date">
+                                {{form.arriv_date}}
+                            </div>
+                        </div>
+                    </div>            
+                    <div class="input-wrapper">
+                        <label for="form.travelerNum">Traveler Number</label>
+                        <div class="search-input">
+                            {{form.travelerNum}}
+                        </div>
                     </div>
                 </div>
-            </div>            
-            <div class="input-wrapper">
-                <label for="form.travelerNum">Traveler Number</label>
-                <div class="search-input">
-                    {{form.travelerNum}}
+                <div class="button">
+                    <button type="submit" class="confirm_button">Confirm</button>
                 </div>
-            </div>
+            </form>
         </div>  
     </div>
 
