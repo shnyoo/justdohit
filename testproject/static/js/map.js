@@ -24,7 +24,7 @@ function initMap() {
         "locations": [
 
         ],
-        "mapOptions": {"fullscreenControl":true,"mapTypeControl":false,"streetViewControl":false,"zoom":18,"zoomControl":true,"maxZoom":20,"mapId":""},
+        "mapOptions": {"fullscreenControl":false,"mapTypeControl":false,"streetViewControl":false,"zoom":18,"zoomControl":false,"maxZoom":20,"mapId":""},
         "mapsApiKey": "AIzaSyAs2Up6ElWDzv9GdisewIH2jMfvJXWp4bs",
         "capabilities": {"input":true,"autocomplete":true}
       };
