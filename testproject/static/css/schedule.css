@@ -55,102 +55,25 @@
     --z-fixed: 100;
     --z-modal: 1000;
 
-
     /* border radius */
     --border-radius: 10px;
 }
 
-/* ============ BASE ================*/
-*{
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-  }
-  
-  html{
-    scroll-behavior: smooth;
-  }
-  
-  body{
-    margin: 0;
-    font-family: var(--body-font);
-    font-size: var(--body-font-size);
-    background-color: var(--body-color);
-    color: var(--text-color);
-  
-  }
-  
-  h1,h2,h3,h4{
-    color: var(--title-color);
-    font-weight: var(--font-semi-bold);
-  }
-  
-  ul, li{
-    list-style: none;
-  }
-  
-.location{
-    text-decoration: none;
-    color: var(--title-color);
-}
 
-
-  /* CSS */
-.car {
-    border-radius: var(--border-radius);
-    margin-left: auto;
-    margin-right: 0;
-    margin-bottom: 0;
-    padding: 5px;
-    width: 20%;
-    background: var(--first-color-lighter);
-}
-
-.car:hover{
-    cursor: pointer;
-    background: var(--first-color);
-}
-
-a {
-  color: white;
-} 
-
-p{
-    color: black;
-}
-.cards{
-    background: white;
-    width: 100vw;
-    height: 93vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-
-.containers{
-    background: white;
-    width: fit-content;
-    position: relative;
-    margin: 10px;
-    padding: 10px;
-    width: 80%;
+p {
     font: 500 1rem var(--body-font); 
+
+}
+
+.schedule{
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);  
     border-radius: var(--border-radius);
- 
+    background: white;
+    width: fit-content;
 }
 
-.start_date{
-    font-size: var(--h1-font-size);
-}
-
-.info{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font: 500 1rem var(--body-font);    
+.info_schedule{
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);  
     border-radius: var(--border-radius);
 }
 
@@ -258,18 +181,8 @@ p{
     color: var(--first-color);
   }
   
-  
   /* Show Menu */
   .show-menu{
     bottom: 0;
   }
   
-.myPBV{
-    align-content: right;
-}
-
-
-.user_info{
-  padding: 10px 10px;
-  text-align: center;
-}
