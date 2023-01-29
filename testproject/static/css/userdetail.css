@@ -176,6 +176,12 @@ p{
     margin-right: var(--mb-1-5);
   }
   
+.containers:hover{
+  cursor: pointer;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);  
+
+}
+
   .grid {
     display: grid;
     gap: 1.5rem;
@@ -274,3 +280,4 @@ p{
 .myPBV{
     align-content: right;
 }
+
