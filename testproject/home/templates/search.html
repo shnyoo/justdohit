@@ -14,7 +14,7 @@
 <body>
     <div class="header-wrapper">
         <div class="search-wrapper">
-            <form method="GET">
+            <form method="GET" action="{%url 'search'%}">
                 <div class="inputs">
                     <div class="input-wrapper">
                         <label for="form.start">Start</label>
@@ -61,7 +61,7 @@
             <p>침대: {{car.bedNum}}개</p>
             <div class="info-wrapper">
                 <div class="more-info">
-                    <a href="{% url 'detail' car.id %}">More Info</a>
+                    <a href="{% url 'detail' car.id %}">Info</a>
                 </div>
             </div>
         </div>
