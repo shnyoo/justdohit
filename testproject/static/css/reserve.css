@@ -75,7 +75,7 @@ body{
     margin: 0;
     font-family: var(--body-font);
     font-size: var(--body-font-size);
-    background-color: var(--body-color);
+    background-color: var(--first-color);
     color: var(--text-color);
     overflow-y: hidden; /* Hide vertical scrollbar */
     overflow-x: hidden; /* Hide horizontal scrollbar */
@@ -104,23 +104,32 @@ a{
 .wrapper{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
     width: 90%;
     height: 90%;
     border-radius: 1rem;
-    box-shadow: 0 -1px 5px var(--first-color-lighter);
+    box-shadow: 0 -1px 5px var(--first-color);
     transition: 0.3s;
+    background-color: var(--body-color);
 }
 
 .wrapper:hover{
     border-radius: 1rem;
-    box-shadow: 0 -1px 5px var(--first-color);
+    box-shadow: 0 -1px 5px var(--first-color-lighter);
 }
 
 .comment{
     text-align: center;
     position: relative;
     width: 100%;
+}
+
+hr.line{
+    border: 0;
+    height: 0;
+    width: 90%;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 
