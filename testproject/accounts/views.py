@@ -13,16 +13,25 @@ def login(request):
         user_name = request.POST['username']
         user_pw = request.POST['password']
         user = auth.authenticate(request, username=user_name, password=user_pw)
-
         if user is not None:
             auth.login(request, user)
-            return redirect('home')
+            return redirect('map')
         else:
             return render(request, 'bad_login.html')
-
     #GET 요청이 들어오면 login form을 담고 있는 login html을 띄워주기
     else:
         return render(request, 'login.html')
+
+def register(request):
+    if request.method == "POST":
+        if request.POST['password'] == request.POST['repeat']:
+            # 회원가입
+            new_user = User.objects.create_user(username=request.POST['username'], password=request.POST['password'])
+            # 로그인
+            auth.login(request, new_user, backend='django.contrib.auth.backends.ModelBackend')
+            # 홈 리다이렉션
+            return redirect('map')
+    return render(request, 'register.html')
 
 def schedule(request, travel_id):
     if request.method == 'POST':

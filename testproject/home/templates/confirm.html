@@ -14,10 +14,12 @@
 </head>
 <body>
     <div class="wrapper">
-        <div class="card">  
-            <h2>예약이 완료되었습니다!</h2>
-            <hr class="line">
-            <div class="comment">
+        <div class="card">
+            <div class="comment"> 
+                <h3>예약이 완료되었습니다!</h3>
+                <hr class="line">
+            </div> 
+            <div class="comment space_evenly">
                 <div class="comment_detail">
                     <span>일시: </span>
                     <span>{{start_date}} {{start_time}}</span>
@@ -27,8 +29,14 @@
                     <span>{{start}}</span>
                 </div>
             </div>
-            <a href="{% url 'map' %}">홈으로 돌아가기</a>
-            <a href="{% url 'schedule' travel_id %}">여행일정 등록하기</a>
+            <div class="link">
+                <div class="button">
+                    <a href="{% url 'map' %}">Back to Home</a>
+                </div>
+                <div class="button">
+                    <a href="{% url 'schedule' travel_id %}">Schedule Trip</a>
+                </div>
+            </div>
         </div>
     </div>
     
