@@ -155,7 +155,16 @@ h2{
     text-align: center;
 }
 
+.carPicture{
+    height: 60%;
+    display: flex;
+    justify-content: center;
+}
 
+.card > .carPicture > .pbvImg{
+    width: 90%;
+    height: 90%;
+  }
 
 
 
@@ -229,8 +238,8 @@ color: var(--first-color);
 }
 
 .nav__list{
-grid-template-columns: repeat(2, 1fr);
-gap: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
 }
 
 .nav__link{
