@@ -60,6 +60,35 @@
 }
 
 
+/* ============ BASE ================*/
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+  
+  html{
+    scroll-behavior: smooth;
+  }
+  
+  body{
+    margin: 0;
+    font-family: var(--body-font);
+    font-size: var(--body-font-size);
+    background-color: var(--body-color);
+    color: var(--text-color);
+  
+  }
+  
+  h1,h2,h3,h4{
+    color: var(--title-color);
+    font-weight: var(--font-semi-bold);
+  }
+  
+  ul, li{
+    list-style: none;
+  }
+
 p {
     font: 500 1rem var(--body-font); 
     padding: 10px;
@@ -70,8 +99,9 @@ p {
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);  
     border-radius: var(--border-radius);
     background: white;
-    width: fit-content;
-    min-width: 450px;
+    text-align: center;
+    margin: auto;
+    width: 90%;
 }
 
 .info_schedule{
@@ -91,7 +121,6 @@ p {
 .containers:hover{
   cursor: pointer;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);  
-
 }
 
   .grid {
@@ -192,7 +221,30 @@ body{
     background: var(--first-color-lighter);
 }
 
+.label{
+    font: 500 1rem var(--body-font); 
+}
 
-form{
-    
+#id_dest,#id_arriv_time{
+    border-radius: .5rem .5rem;
+    width: 100px;
+}
+
+button{
+    background: var(--first-color);
+    color: white;
+    border: none;
+    float: right;
+    text-align: center;
+    border-radius: .5rem .5rem;
+}
+
+.form{
+    text-align: center;
+}
+
+.button{
+    display: grid;
+    margin: auto;
+    width: 100px;
 }

@@ -33,17 +33,25 @@
                     {{ride.dest}}            
                 </p>
             </div>
-            
         </div>
     </div>
     {% endfor %}
 
-    <form method="POST" action="{% url 'schedule' travel_id %}">
-        {% csrf_token %}
-        {{form}}
-        <br />
-        <button type="submit">일정 추가
-    </form>
+    <div class="form">
+        <form method="POST" action="{% url 'schedule' travel_id %}">
+            {% csrf_token %}
+            {{form}}
+            <br />
+    </div>
+    <div class="button">
+        <button type="submit">
+            Add event
+        </button>
+    </div>
+           
+        </form>
+    
+    
 
     <script type="module" src="{% static 'js/info_bar.js' %}"></script>
 
