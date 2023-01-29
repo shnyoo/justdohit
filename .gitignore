@@ -8,3 +8,4 @@ testproject/accounts/__pycache__/
 *.pyc
 *.pyc
 testproject/db.sqlite3
+testproject/db.sqlite3
