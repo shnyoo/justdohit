@@ -208,7 +208,7 @@ outline: none;
   margin-top: 10px;
   padding-top: 10px;
   display: flex;
-  justify-content: right;
+  justify-content: center;
   box-shadow: 0 1px 5px var(--first-color-lighter);
   background-color: var(--first-color-lighter);
   padding: 4px;
